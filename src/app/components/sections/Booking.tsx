@@ -11,8 +11,8 @@ export function Booking() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-serif text-5xl md:text-6xl text-foreground mb-4">Book The Vibes</h2>
-          <p className="font-sans text-primary uppercase tracking-widest text-sm">Exodus Entertainment Group</p>
+          <h2 className="font-serif text-5xl md:text-6xl text-foreground mb-4">Book Keni</h2>
+          
         </motion.div>
 
         <form className="bg-card p-10 md:p-16 rounded-[3rem] shadow-2xl border border-foreground/5 relative overflow-hidden group">

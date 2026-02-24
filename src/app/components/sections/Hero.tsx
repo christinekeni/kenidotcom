@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { ArrowDown } from "lucide-react";
 import heroImage from "../../../assets/keni4.jpg";
 
 export function Hero() {
@@ -14,7 +13,7 @@ export function Hero() {
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center 70%', // Adjust percentage to control vertical positioning
+          backgroundPosition: 'center 70%',
           backgroundRepeat: 'no-repeat'
         }}
       >
@@ -38,22 +37,8 @@ export function Hero() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
         >
-          Artist
+          Singer / Songwriter
         </motion.p>
-
-        <motion.div
-          className="mt-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-        >
-           <a
-            href="#music"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-foreground rounded-full font-serif text-lg font-bold hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg hover:shadow-primary/40 hover:scale-105"
-          >
-            Listen Now <ArrowDown size={20} />
-          </a>
-        </motion.div>
       </div>
       
       {/* Scroll Indicator */}

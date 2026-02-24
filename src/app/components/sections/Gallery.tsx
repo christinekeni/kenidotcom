@@ -2,16 +2,32 @@ import { motion } from "motion/react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { Instagram } from "lucide-react";
 
-const images = [
-  "https://images.unsplash.com/photo-1702384902092-54f5dc4830d0?q=80&w=1080&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1757140447779-9cffcc270104?q=80&w=1080&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1704253797699-f983e3cd70ff?q=80&w=1080&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1712189142408-39a2e77645d9?q=80&w=1080&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1770737639812-bd3c709da73b?q=80&w=1080&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1642426028488-04f91c79d233?q=80&w=1080&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1611578490626-d4bacc1215be?q=80&w=1080&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1573316494404-0b90c43f4f03?q=80&w=1080&auto=format&fit=crop",
-];
+// Import all images
+import keni1 from "../../../assets/keni1.jpg";
+import keni2 from "../../../assets/keni2.jpg";
+import keni3 from "../../../assets/keni3.jpg";
+import keni4 from "../../../assets/keni4.jpg";
+import keni5 from "../../../assets/keni5.jpg";
+import keni6 from "../../../assets/keni6.jpg";
+import keni7 from "../../../assets/keni7.jpg";
+import keni8 from "../../../assets/keni8.jpg";
+import keni9 from "../../../assets/keni9.jpg";
+
+// Function to shuffle array (Fisher-Yates algorithm)
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
+// Create array of imported images
+const imageImports = [keni1, keni2, keni3, keni4, keni5, keni6, keni7, keni8, keni9];
+
+// Shuffle the images
+const shuffledImages = shuffleArray(imageImports);
 
 export function Gallery() {
   return (
@@ -24,7 +40,7 @@ export function Gallery() {
           className="text-center mb-16"
         >
           <h2 className="font-serif text-5xl md:text-6xl text-foreground mb-4 font-bold tracking-wide">
-            The Life
+            Lookbook
           </h2>
           <p className="font-sans text-primary uppercase tracking-widest text-sm font-medium">
             On & Off Stage
@@ -35,7 +51,7 @@ export function Gallery() {
           columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
         >
           <Masonry gutter="24px">
-            {images.map((image, i) => (
+            {shuffledImages.map((image, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -46,7 +62,7 @@ export function Gallery() {
               >
                 <img
                   src={image}
-                  alt={`Gallery image ${i + 1}`}
+                  alt={`Keni - Gallery image ${i + 1}`}
                   className="w-full h-auto block object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 border-[3px] border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none z-10" />
@@ -58,7 +74,7 @@ export function Gallery() {
 
         <div className="text-center mt-16">
           <motion.a
-            href="https://instagram.com"
+            href="https://instagram.com/ChristineKeni"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

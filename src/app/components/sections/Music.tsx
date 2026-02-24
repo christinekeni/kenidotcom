@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Share2, Heart, Music as MusicIcon } from "lucide-react";
+import { Music as MusicIcon, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 const lyrics = {
@@ -106,6 +106,14 @@ export function Music() {
           transition={{ duration: 0.8 }}
           className="relative group"
         >
+          {/* Latest Release Badge */}
+          <div className="absolute -top-4 -left-4 z-30">
+            <div className="bg-accent text-accent-foreground px-4 py-2 rounded-full shadow-lg flex items-center gap-2 font-medium">
+              <Sparkles size={16} />
+              <span className="text-sm uppercase tracking-wider">Latest Release</span>
+            </div>
+          </div>
+
           <div className="absolute inset-0 bg-primary rounded-3xl transform rotate-3 scale-105 opacity-20 group-hover:rotate-6 transition-transform duration-500" />
           
           {/* Spotify Embedded Player */}
@@ -121,20 +129,10 @@ export function Music() {
             />
           </div>
           
-          {/* Track Info & Actions */}
-          <div className="mt-8 flex justify-between items-center">
-            <div>
-              <h3 className="font-serif text-3xl text-foreground font-bold">Mzungu Man</h3>
-              <p className="font-sans text-secondary font-medium">Single • 2026</p>
-            </div>
-            <div className="flex gap-4">
-              <button className="p-3 border border-foreground/20 rounded-full hover:bg-foreground hover:text-background transition-colors text-foreground">
-                <Heart size={20} />
-              </button>
-              <button className="p-3 border border-foreground/20 rounded-full hover:bg-foreground hover:text-background transition-colors text-foreground">
-                <Share2 size={20} />
-              </button>
-            </div>
+          {/* Track Info (no heart/share buttons) */}
+          <div className="mt-8">
+            <h3 className="font-serif text-3xl text-foreground font-bold">Mzungu Man</h3>
+            <p className="font-sans text-secondary font-medium">Single • 2026</p>
           </div>
         </motion.div>
 
