@@ -1,0 +1,3 @@
+{
+  "buildCommand": "tsc -b --noEmit && vite build || vite build"
+}

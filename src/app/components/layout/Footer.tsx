@@ -1,4 +1,4 @@
-import { Instagram, Twitter, Youtube, Music2 } from "lucide-react";
+import { Instagram, Twitter, Youtube } from "lucide-react";
 import { SiTiktok, SiApplemusic, SiSpotify } from "react-icons/si";
 
 export function Footer() {
